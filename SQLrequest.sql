@@ -1,0 +1,14 @@
+SELECT * FROM игрушки WHERE id > 1 ORDER BY id DESC; 
+CREATE SCHEMA `товар` DEFAULT CHARACTER SET utf8 COLLATE utf8_bin;
+CREATE TABLE `товар` . `игрушки` (`id` INT NOT NULL AUTO_INCREMENT, `name` VARCHAR(45) NOT NULL, `manufacturer` VARCHAR(45) NOT NULL, PRIMARY KEY (`id`));
+SELECT * FROM товар.игрушки;
+ALTER TABLE `товар`.`игрушки` ADD COLUMN `quantity` INT NOT NULL AFTER `manufacturer`;
+USE товар; 
+DROP TABLE `товар`.`игрушки`;
+INSERT INTO `товар`.`игрушки` (`name`,`manufacturer`,`quantity`) VALUES (`динозавр`,`мякиши`,`5`);
+SELECT * FROM игрушки WHERE id=1;
+SELECT * FROM игрушки WHERE (id<3) AND (manufacturer IS NOT NULL );
+SELECT * FROM игрушки ORDER BY quantity;
+SELECT * FROM игрушки LIMIT 2;
+UPDATE игрушки SET manufacturer = 'zippo' WHERE id=2;
+DELETE FROM игрушки WHERE id>4;
